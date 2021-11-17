@@ -25,7 +25,7 @@ public class Problem1{
         else System.out.println("false");
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         ArrayList<Integer> list = new ArrayList<>(Arrays.asList(10, 15, 3, 7));
         Problem1.printAnswer(Problem1.solution(list, 17));
     }
