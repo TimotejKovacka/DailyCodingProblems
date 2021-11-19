@@ -1,6 +1,7 @@
 package Problem3;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Node {
     private String val;
@@ -28,7 +29,7 @@ public class Node {
 
     private ArrayList<String> serializer (ArrayList<String> values, Node node){
         if (node == null) {
-            values.add("?");
+            values.add("null");
         } else {
             values.add(node.val);
             serializer(values, node.left);
@@ -43,17 +44,17 @@ public class Node {
     }
 
     public Node deserialize(String tree){
-        String[] values = tree.split(", ");
-        return deserializer(values, 0);
+        ArrayList<String> values = new ArrayList<String>(Arrays.asList(tree.split(", ")));
+        return deserializer(values);
     }
-    private Node deserializer(String[] values, int index){
-        String val = values[index];
-        if (val.equals("?")){
+    private Node deserializer(ArrayList<String> values){
+        String val = values.remove(0);
+        if (val.equals("null")){
             return null;
         } else {
             Node node = new Node(val);
-            node.left = deserializer(values, ++index);
-            node.right = deserializer(values, ++index);
+            node.left = deserializer(values);
+            node.right = deserializer(values);
             return node;
         }
     }
