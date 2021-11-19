@@ -6,6 +6,14 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Problem4",
+            "request": "launch",
+            "mainClass": "Problem4",
+            "projectName": "DailyCodingProblems_f31d9468",
+            "args": "1 2 0"
+        },
+        {
+            "type": "java",
             "name": "Launch Problem3",
             "request": "launch",
             "mainClass": "Problem3.Problem3",
